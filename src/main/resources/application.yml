@@ -1,0 +1,16 @@
+constraint:
+  quantity:
+    item:
+      name: Soda
+      maximum: 12
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 1b4f1ffde64d7af52ce2
+            clientSecret: 9d26555dd6c9f15bd43ef55cad52e9585e0cbb5e
+  profiles:
+    active: no-auth
