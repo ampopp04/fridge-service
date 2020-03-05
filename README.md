@@ -1,4 +1,4 @@
-[Travis CI Build Server Integration](https://travis-ci.com/ampopp04/fridge-service)      ![Java CI with Gradle](https://github.com/ampopp04/fridge-service/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master) 
+[Travis CI](https://travis-ci.com/ampopp04/fridge-service) [![Build Status](https://travis-ci.com/ampopp04/fridge-service.svg?branch=master)](https://travis-ci.com/ampopp04/fridge-service) ![Java CI](https://github.com/ampopp04/fridge-service/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/ampopp04/fridge-service/badge.svg?branch=master)](https://coveralls.io/github/ampopp04/fridge-service?branch=master)
 
 
 
