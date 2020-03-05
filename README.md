@@ -1,4 +1,4 @@
-GitHub Actions Build & Travis CI Integration     ![Java CI with Gradle](https://github.com/ampopp04/fridge-service/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master)
+[Travis CI Build Server Integration](https://travis-ci.com/ampopp04/fridge-service)      ![Java CI with Gradle](https://github.com/ampopp04/fridge-service/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master) 
 
 
 
