@@ -28,6 +28,7 @@ This is a simple demonstration example that lacks many elements required for a r
 - Tune Logging
 - Enhance business layer constraints so that they are adjustable via remote API vs statically defined in properties file
 - Production adjusted security rather than using simple authentication for this example.
+- Metrics/Performance/Logs/Tracing is supported through Actuator endpoints but could be further enhanced using Spring Boot Admin Client/Server and DropWizard
 - Scalability and Parallel Execution Enhancements
   - Make application stateless
   - Containerize using Docker
@@ -55,6 +56,100 @@ Security is disabled by default unless running in the prod profile. This is for 
         * curl -v --cookie "JSESSIONID=A407AB7E1FD8DA16E9BCDEA599138F3C" http://localhost:8080
     * This should be enhanced to not use jsession cookies
  
+### Actuator Endpoints
+Included is the Spring Boot Actuator module. This supports remote evaluation of application health, metrics, performance, logs, traces, and many other aspects of the system at runtime.
+
+
+ Navigate to 
+```shell script
+    http://localhost:8080/actuator/ 
+```
+if prompted for a password you will see a generated security password in the console if running the system in the default test no-oauth mode.
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/actuator",
+      "templated": false
+    },
+    "beans": {
+      "href": "http://localhost:8080/actuator/beans",
+      "templated": false
+    },
+    "caches-cache": {
+      "href": "http://localhost:8080/actuator/caches/{cache}",
+      "templated": true
+    },
+    "caches": {
+      "href": "http://localhost:8080/actuator/caches",
+      "templated": false
+    },
+    "health": {
+      "href": "http://localhost:8080/actuator/health",
+      "templated": false
+    },
+    "health-path": {
+      "href": "http://localhost:8080/actuator/health/{*path}",
+      "templated": true
+    },
+    "info": {
+      "href": "http://localhost:8080/actuator/info",
+      "templated": false
+    },
+    "conditions": {
+      "href": "http://localhost:8080/actuator/conditions",
+      "templated": false
+    },
+    "configprops": {
+      "href": "http://localhost:8080/actuator/configprops",
+      "templated": false
+    },
+    "env": {
+      "href": "http://localhost:8080/actuator/env",
+      "templated": false
+    },
+    "env-toMatch": {
+      "href": "http://localhost:8080/actuator/env/{toMatch}",
+      "templated": true
+    },
+    "loggers": {
+      "href": "http://localhost:8080/actuator/loggers",
+      "templated": false
+    },
+    "loggers-name": {
+      "href": "http://localhost:8080/actuator/loggers/{name}",
+      "templated": true
+    },
+    "heapdump": {
+      "href": "http://localhost:8080/actuator/heapdump",
+      "templated": false
+    },
+    "threaddump": {
+      "href": "http://localhost:8080/actuator/threaddump",
+      "templated": false
+    },
+    "metrics": {
+      "href": "http://localhost:8080/actuator/metrics",
+      "templated": false
+    },
+    "metrics-requiredMetricName": {
+      "href": "http://localhost:8080/actuator/metrics/{requiredMetricName}",
+      "templated": true
+    },
+    "scheduledtasks": {
+      "href": "http://localhost:8080/actuator/scheduledtasks",
+      "templated": false
+    },
+    "mappings": {
+      "href": "http://localhost:8080/actuator/mappings",
+      "templated": false
+    }
+  }
+}
+```
+
+This is a very simple example of adding monitoring support to the application at a low level. It is suggested to either implement a custom UI solution on top of these endpoints or Spring Boot Admin Client/Server UI. This is best used with Eureka Service Registry/Discovery and a custom standalone Auth/Resource microservice.
 
 ### API Resources
 The rest API for this example follows the HATEOAS standard. 

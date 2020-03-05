@@ -4,6 +4,14 @@ constraint:
       name: Soda
       maximum: 12
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 spring:
   security:
     oauth2:
